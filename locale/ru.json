@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Веб-поиск через MCP z.ai",
+    "description": "Веб-поиск через MCP-сервер z.ai из тарифа GLM Coding Plan, с локальным резервным MCP на DuckDuckGo без ключей. Чинит web_search, когда ключ DeepSeek не задан."
+  }
+}

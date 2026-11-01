@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Z.ai MCP Web Search",
+    "description": "Web search through the GLM Coding Plan's z.ai MCP server, with a keyless local DuckDuckGo MCP fallback. Repairs web_search when no DeepSeek API key is stored."
+  }
+}

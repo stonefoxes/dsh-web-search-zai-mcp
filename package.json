@@ -1,0 +1,36 @@
+{
+  "name": "dsh-web-search-zai-mcp",
+  "version": "0.1.1",
+  "private": true,
+  "type": "module",
+  "description": "DSH web-search provider bundle: z.ai GLM Coding Plan search MCP with a keyless local MCP fallback",
+  "license": "MIT",
+  "exports": {
+    ".": "./index.js",
+    "./mcp": "./mcp.js",
+    "./normalize": "./normalize.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "index.js",
+    "mcp.js",
+    "normalize.js",
+    "cordis.patch.yml",
+    "locale/en.json",
+    "locale/ru.json",
+    "icon.svg",
+    "README.md",
+    "tests"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stonefoxes/dsh-web-search-zai-mcp.git"
+  }
+}

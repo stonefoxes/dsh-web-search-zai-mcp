@@ -1,0 +1,26 @@
+# dsh-web-search-zai-mcp bundle patch.
+#
+# 1. Overrides the `web` row that dsh-base pins to `searchProvider:
+#    deepseek-official`. That shipped provider reports itself available even
+#    with no DEEPSEEK_API_KEY stored (its availability check only sees that a
+#    key *resolver* exists), so every web_search call fails at dispatch with
+#    "DeepSeek search has no API key". Pinning to the z.ai MCP provider makes
+#    the standard web_search tool resolve through this bundle instead.
+#    NOTE: an id-matching override replaces the row's complete `config`, so
+#    `fetchProvider: http` is restated here exactly as dsh-base ships it.
+# 2. Inserts this bundle's own plugin row. `zai.apiKeyEnv` names the same
+#    credential reference the profile's GLM (`zai`) route uses, so one stored
+#    key serves both the model and web search; no secret is written here.
+#    Every other value comes from the plugin's built-in defaults.
+- id: web
+  name: '@deepseek-ai/dsh-web'
+  config:
+    searchProvider: zai-mcp
+    fetchProvider: http
+
+- insert:
+    - id: web-search-zai-mcp
+      name: dsh-web-search-zai-mcp
+      config:
+        zai:
+          apiKeyEnv: ZAI_API_KEY
